@@ -6,9 +6,17 @@ final class MorseTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Morse().text, "Hello, World!")
+        XCTAssertEqual(
+            #"abcdefghijklmnopqrstuvwxyz01234567890!@&()-=+?,.:"'"#.toMorse,
+            ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. ----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----. ----- -.-.-- .--.-. .-... -.--. -.--.- -....- -...- .-.-. ..--.. --..-- .-.-.- ---... .-..-. .----."
+        )
+        
+        XCTAssertEqual(
+            ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.. ----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----. ----- -.-.-- .--.-. .-... -.--. -.--.- -....- -...- .-.-. ..--.. --..-- .-.-.- ---... .-..-. .----.".fromMorse,
+            #"abcdefghijklmnopqrstuvwxyz01234567890!@&()-=+?,.:"'"#
+        )
     }
-
+    
     static var allTests = [
         ("testExample", testExample),
     ]
